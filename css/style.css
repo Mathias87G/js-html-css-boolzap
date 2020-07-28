@@ -138,6 +138,7 @@ aside {
   display: flex;
   align-items: center;
   padding: 0 10px;
+  cursor: pointer;
 }
 
 .contact-preview:hover {
@@ -154,6 +155,10 @@ aside {
   padding-right: 40px;
 }
 
+.contact-text h4, .main-cnt-details h4 {
+  padding-bottom: 5px;
+}
+
 .contact-time  {
   align-self: flex-start;
   padding-top: 10px;
@@ -164,6 +169,7 @@ aside {
 
 main {
   width: calc(100% - 430px);
+  max-width: calc(100% - 430px);
   float:left;
 }
 
