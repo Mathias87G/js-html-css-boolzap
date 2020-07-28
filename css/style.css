@@ -58,8 +58,9 @@ aside {
   border-radius: 50%;
 }
 
-.asd-top-icons i {
+.asd-top-icons i, .main-top-icons i {
   padding-left: 12px;
+  cursor: pointer;
 }
 
 /* aside notifiche */
@@ -120,6 +121,7 @@ aside {
   border: none;
   border-width: 0px;
   box-shadow: none;
+  padding-left: 5px;
 }
 
 /* aside contacts */
@@ -155,24 +157,105 @@ aside {
 .contact-time  {
   align-self: flex-start;
   padding-top: 10px;
+  font-size: 12px;
 }
+
+/* main */
 
 main {
   width: calc(100% - 430px);
-  float: left
+  float:left;
 }
+
+/* main contact */
 
 .main-contact {
   height: 80px;
   background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
 }
+
+.main-cnt-access {
+  display: flex;
+  align-items: center;
+}
+
+.main-cnt-details {
+  padding-left: 10px;
+}
+
+.main-top-icons {
+  font-size: 30px;
+  color: #b1b1b1;
+}
+/* main chat */
 
 .main-chat {
   height: calc(100vh - 210px);
   background-color: #e5dcd5;
+  overflow-y: scroll;
 }
+
+.chat-text-ctr {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.chat-text {
+  height: 100%;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.white {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.green {
+  background-color: #d2fcb6;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+/* main text */
 
 .main-text {
   height: 80px;
   background-color: #f3eeea;
+  display: flex;
+  align-items: center;
+}
+
+.main-text a i {
+  color: #6b7376;
+  font-size: 30px;
+  padding: 0 25px;
+}
+
+#message {
+  width: 100%;
+  border: none;
+  border-width: 0px;
+  box-shadow: none;
+  height: 40px;
+  padding-left: 5px;
+  border-radius: 5px;
 }
