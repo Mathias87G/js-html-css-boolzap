@@ -33,6 +33,10 @@
   transform: translate(-50%, -50%);
 }
 
+.template {
+  display: none;
+}
+
 /* aside */
 
 aside {
@@ -112,6 +116,7 @@ aside {
 #searchIcon {
   background-color: white;
   border: none;
+  outline: none;
   font-size: 20px;
   padding: 0 10px;
 }
@@ -119,6 +124,7 @@ aside {
 #search {
   width: 100%;
   border: none;
+  outline: none;
   border-width: 0px;
   box-shadow: none;
   padding-left: 5px;
@@ -206,39 +212,35 @@ main {
 }
 
 .chat-text-ctr {
-  height: 40px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
 }
 
 .chat-text {
-  height: 100%;
-  width: 150px;
+  min-width: 10%;
+  max-width: 30%;
+  min-height: 1%;
   border-radius: 5px;
+  padding: 3px 4px;
+  margin-top: 20px;
 }
 
 .white {
   background-color: white;
-  position: absolute;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  float: left;
+  clear: both;
   margin-left: 20px;
 }
 
 .green {
   background-color: #d2fcb6;
-  position: absolute;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  float: right;
+  clear: both;
   margin-right: 20px;
+}
+
+.chat-time {
+  text-align: right;
+  font-size: 12px;
 }
 
 /* main text */
@@ -256,11 +258,19 @@ main {
   padding: 0 25px;
 }
 
+.main-text button  {
+  color: #6b7376;
+  font-size: 30px;
+  padding: 0 25px;
+  border: none;
+  outline: none;
+}
+
 #message {
   width: 100%;
   border: none;
+  outline: none;
   border-width: 0px;
-  box-shadow: none;
   height: 40px;
   padding-left: 5px;
   border-radius: 5px;
