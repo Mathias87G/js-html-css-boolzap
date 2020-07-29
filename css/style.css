@@ -113,6 +113,7 @@ aside {
   width: calc(100% - 14px);
   display: flex;
 }
+
 #searchIcon {
   background-color: white;
   border: none;
@@ -125,7 +126,6 @@ aside {
   width: 100%;
   border: none;
   outline: none;
-  border-width: 0px;
   box-shadow: none;
   padding-left: 5px;
 }
@@ -209,10 +209,6 @@ main {
   height: calc(100vh - 210px);
   background-color: #e5dcd5;
   overflow-y: scroll;
-}
-
-.chat-text-ctr {
-  width: 100%;
 }
 
 .chat-text {

@@ -9,6 +9,7 @@ $('#send').click(function() {
 // Invio tastiera
 $('#message').keydown(keyboard);
 
+
 // Funzioni
 
 // messaggio utente e risposta casuale
