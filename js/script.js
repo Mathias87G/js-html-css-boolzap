@@ -1,14 +1,14 @@
 // Array messaggi casuali
 var messaggiRandom = ['Ok', 'Ciao', 'La penso proprio come te', 'Sei grande'];
 
-// Click
-$('#send').click(function() {
-  aggiungi();
+$( document ).ready(function() {
+  // Click
+  $('#send').click(function() {
+    aggiungi();
+  });
+  // Invio tastiera
+  $('#message').keydown(keyboard);
 });
-
-// Invio tastiera
-$('#message').keydown(keyboard);
-
 
 // Funzioni
 
@@ -17,25 +17,18 @@ function aggiungi(){
     var messaggio = $('#message').val();
     // Condizione per messaggio non vuoto
     if (messaggio != '') {
+      // clono template e appendo testo messaggio
       var chat = $('.template .chat-text-ctr').clone();
       chat.find('.chat-text').addClass('green');
       chat.find('.chat-text p').append(messaggio);
-      $('.main-chat').append(chat);
       // ora attuale
-      var d = new Date();
-      var minutes = ("0" + d.getMinutes()).substr(-2);
-      var time = d.getHours() + ':' + minutes;
-      chat.find('.chat-time small').append(time);
+      chat.find('.chat-time small').append(ora());
       $('#message').val('');
-      // Risposta casuale dopo un secondo
-      setTimeout(function(){
-        var rispostaRandom = messaggiRandom[random(0, (messaggiRandom.length - 1))]
-        var answer = $('.template .chat-text-ctr').clone();
-        answer.find('.chat-text').addClass('white');
-        answer.find('.chat-text p').append(rispostaRandom);
-        $('.main-chat').append(answer);
-        answer.find('.chat-time small').append(time);
-      }, 1000);
+      $('.main-chat').append(chat);
+      // scroll messaggio
+      $('.main-chat').scrollTop($('.main-chat')[0].scrollHeight);
+      // risposta casuale
+      randomAnswer();
   }
 }
 
@@ -49,4 +42,25 @@ function keyboard() {
 // Numero casuale
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)  + min);
+}
+
+// Funzione ora
+function ora() {
+  var d = new Date();
+  var minutes = ("0" + d.getMinutes()).substr(-2);
+  var time = d.getHours() + ':' + minutes;
+  return time;
+}
+
+// Funzione risposta casuale con delay
+function randomAnswer() {
+  setTimeout(function(){
+    var rispostaRandom = messaggiRandom[random(0, (messaggiRandom.length - 1))]
+    var answer = $('.template .chat-text-ctr').clone();
+    answer.find('.chat-text').addClass('white');
+    answer.find('.chat-text p').append(rispostaRandom);
+    answer.find('.chat-time small').append(ora());
+    $('.main-chat').append(answer);
+    $('.main-chat').scrollTop($('.main-chat')[0].scrollHeight);
+  }, 1000);
 }

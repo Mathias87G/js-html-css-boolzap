@@ -13,14 +13,16 @@
 
 .container {
   height: 100vh;
-  background-color: #dbdbd3;
+  background: rgb(0,5,4);
+  background: radial-gradient(circle, rgba(0,5,4,1) 0%, rgba(38,6,21,1) 51%, rgba(13,74,39,1) 100%);
   position: relative;
 }
 
 .container-top {
   height: 140px;
   width: 100%;
-  background-color: #009788;
+  background: rgb(6,103,88);
+  background: radial-gradient(circle, rgba(6,103,88,1) 0%, rgba(1,7,14,1) 100%);
 }
 
 .container-main {
@@ -47,7 +49,8 @@ aside {
 /* Aside top */
 .aside-top {
   height: 80px;
-  background-color: #eaeaea;
+  background: rgb(6,103,88);
+  background: radial-gradient(circle, rgba(6,103,88,1) 0%, rgba(1,7,14,1) 100%);
   border-right: 1px solid #d5d5d5;
   display: flex;
   align-items: center;
@@ -71,7 +74,7 @@ aside {
 
 .aside-notifications {
   height: 90px;
-  background-color: #8edafc;
+  background-color: #3b89ac;
   display: flex;
   align-items: center;
   padding-left: 15px;
@@ -82,7 +85,7 @@ aside {
   width: 60px;
   border-radius: 50%;
   background-color: #f2fbff;
-  color: #8edafc;
+  color: #3b89ac;
   font-size: 30px;
   display: flex;
   justify-content: center;
@@ -94,7 +97,7 @@ aside {
 }
 
 .ntf-text p {
-  color: #417a83;
+  color: rgba(2, 41, 34, 1);
   text-decoration: underline;
 }
 
@@ -102,7 +105,7 @@ aside {
 
 .aside-search {
   height: 50px;
-  background-color: #fbfbfb;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,11 +118,12 @@ aside {
 }
 
 #searchIcon {
-  background-color: white;
+  background-color: black;
   border: none;
   outline: none;
   font-size: 20px;
   padding: 0 10px;
+  color: #b1b1b1;
 }
 
 #search {
@@ -140,15 +144,25 @@ aside {
 
 .contact-preview {
   height: 80px;
-  background-color: white;
+  background: rgb(6,103,88);
+  background: radial-gradient(circle, rgba(6,103,88,1) 0%, rgba(1,7,14,1) 100%);
   display: flex;
   align-items: center;
   padding: 0 10px;
   cursor: pointer;
+  color: white;
+}
+
+.contact-preview.active {
+  background: rgb(15,101,66);
+  background: radial-gradient(circle, rgba(6,103,88,1) 0%, rgba(168,172,169,1) 51%, rgba(6,103,88,1) 100%);
+  color: black;
 }
 
 .contact-preview:hover {
-  background-color: #e9ebea;
+  background: rgb(15,101,66);
+  background: radial-gradient(circle, rgba(6,103,88,1) 0%, rgba(168,172,169,1) 51%, rgba(6,103,88,1) 100%);
+  color: black;
 }
 
 .avatar {
@@ -161,8 +175,9 @@ aside {
   padding-right: 40px;
 }
 
-.contact-text h4, .main-cnt-details h4 {
+.main-cnt-details h4 {
   padding-bottom: 5px;
+  color: white;
 }
 
 .contact-time  {
@@ -183,7 +198,8 @@ main {
 
 .main-contact {
   height: 80px;
-  background-color: #eaeaea;
+  background: rgb(6,103,88);
+  background: radial-gradient(circle, rgba(6,103,88,1) 0%, rgba(1,7,14,1) 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -199,6 +215,10 @@ main {
   padding-left: 10px;
 }
 
+.main-cnt-details p {
+  color: #b1b1b1;
+}
+
 .main-top-icons {
   font-size: 30px;
   color: #b1b1b1;
@@ -207,8 +227,14 @@ main {
 
 .main-chat {
   height: calc(100vh - 210px);
-  background-color: #e5dcd5;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(50,5,13,1) 11%, rgba(31,70,43,1) 38%, rgba(19,66,106,1) 55%, rgba(62,23,95,1) 78%, rgba(26,75,85,1) 100%);
   overflow-y: scroll;
+  display: none;
+}
+
+.main-chat.active {
+  display: block;
 }
 
 .chat-text {
@@ -217,7 +243,7 @@ main {
   min-height: 1%;
   border-radius: 5px;
   padding: 3px 4px;
-  margin-top: 20px;
+  margin: 10px 0;
 }
 
 .white {
@@ -243,7 +269,7 @@ main {
 
 .main-text {
   height: 80px;
-  background-color: #f3eeea;
+  background-color: black;
   display: flex;
   align-items: center;
 }
@@ -260,6 +286,7 @@ main {
   padding: 0 25px;
   border: none;
   outline: none;
+  background-color: black;
 }
 
 #message {
