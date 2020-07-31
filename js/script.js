@@ -2,12 +2,18 @@
 var messaggiRandom = ['Ok', 'Ciao', 'La penso proprio come te', 'Sei grande'];
 
 $( document ).ready(function() {
-  // Click
+  // Click messaggio
   $('#send').click(function() {
     aggiungi();
   });
-  // Invio tastiera
+  // Invio tastiera messaggio
   $('#message').keydown(keyboard);
+  // Chat attiva su Click
+  $('.contact-preview').click(function(){
+    var selectContact = $(this);
+    selectChat(selectContact);
+    details();
+  });
 });
 
 // Funzioni
@@ -24,9 +30,11 @@ function aggiungi(){
       // ora attuale
       chat.find('.chat-time small').append(ora());
       $('#message').val('');
-      $('.main-chat').append(chat);
+      $('.main-chat.active').append(chat);
       // scroll messaggio
       $('.main-chat').scrollTop($('.main-chat')[0].scrollHeight);
+      // Messaggio in attesa della risposta
+      $('.main-cnt-details p').text('sta scrivendo...');
       // risposta casuale
       randomAnswer();
   }
@@ -60,7 +68,30 @@ function randomAnswer() {
     answer.find('.chat-text').addClass('white');
     answer.find('.chat-text p').append(rispostaRandom);
     answer.find('.chat-time small').append(ora());
-    $('.main-chat').append(answer);
+    $('.main-chat.active').append(answer);
     $('.main-chat').scrollTop($('.main-chat')[0].scrollHeight);
+    // Cambio ora e testo al contatto
+    $('.main-cnt-details p').text('Ultimo accesso alle ' + ora());
+    $('.contact-preview.active .contact-time p').text(ora());
+    $('.contact-preview.active .contact-text p').text(rispostaRandom);
   }, 1000);
+}
+
+// Funzione per selezione contatto e chat attiva
+function selectChat(x) {
+  var activeContact = $('.aside-contacts .contact-preview.active');
+  var activeChat = $('.main-chat-ctr .main-chat.active');
+  var position = x.index();
+  activeContact.removeClass('active');
+  activeChat.removeClass('active');
+  $(x).addClass('active');
+  $('.main-chat-ctr .main-chat').eq(position).addClass('active');
+}
+
+// Funzione per cambio nome e immagine profilo chat
+function details() {
+  var name = $('.contact-preview.active .contact-text h4').text();
+  $('.main-cnt-details h4').text(name);
+  var image = $('.contact-preview.active .avatar').attr('src');
+  $('.main-cnt-access a img').attr('src', image);
 }
