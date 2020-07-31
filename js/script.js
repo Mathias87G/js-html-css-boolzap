@@ -6,6 +6,9 @@ $( document ).ready(function() {
   $('#send').click(function() {
     aggiungi();
   });
+  // Richiamo funzione cambio icona messaggio
+  $('#message').focus(changeIcon);
+  $('#message').focusout(changeIcon);
   // Invio tastiera messaggio
   $('#message').keydown(keyboard);
   // Chat attiva su Click
@@ -14,6 +17,7 @@ $( document ).ready(function() {
     selectChat(selectContact);
     details();
   });
+  search()
 });
 
 // Funzioni
@@ -94,4 +98,32 @@ function details() {
   $('.main-cnt-details h4').text(name);
   var image = $('.contact-preview.active .avatar').attr('src');
   $('.main-cnt-access a img').attr('src', image);
+}
+// Funzione Cambio icona
+function changeIcon() {
+  $('#send,#mic').toggle(300);
+}
+
+// funzione barra di ricerca
+function search() {
+  $('#search').keyup(function(){
+  var searchText = $('#search').val().toLowerCase();
+    $('.contact-preview').each(function(){
+      var name = $(this).find('.contact-text h4').text().toLowerCase();
+      if (check(name, searchText)) {
+        $(this).removeClass('hide');
+      } else {
+        $(this).addClass('hide');
+      }
+    });
+  });
+}
+// funzione controllo
+function check(array, element){
+    for (var i = 0; i < array.length; i++) {
+        if (array.indexOf(element) != -1){
+            return true;
+        }
+    }
+    return false;
 }

@@ -138,7 +138,8 @@ aside {
 /* aside contacts */
 
 .aside-contacts {
-  background-color: yellow;
+  background: rgb(6,103,88);
+  background: radial-gradient(circle, rgba(6,103,88,1) 0%, rgba(1,7,14,1) 100%);
   height: calc(100vh - 270px);
   overflow-y: auto;
 }
@@ -283,7 +284,7 @@ main {
 .main-text a i {
   color: #6b7376;
   font-size: 30px;
-  padding: 0 25px;
+  padding: 0 20px;
 }
 
 .main-text button  {
@@ -295,6 +296,10 @@ main {
   background-color: black;
 }
 
+#send {
+  display: none;
+}
+
 #message {
   width: 100%;
   border: none;
@@ -303,4 +308,8 @@ main {
   height: 40px;
   padding-left: 5px;
   border-radius: 5px;
+}
+
+.hide {
+  display: none;
 }
