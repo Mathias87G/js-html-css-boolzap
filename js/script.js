@@ -120,10 +120,10 @@ function search() {
 }
 // funzione controllo
 function check(array, element){
-    for (var i = 0; i < array.length; i++) {
-        if (array.indexOf(element) != -1){
-            return true;
-        }
+  for (var i = 0; i < array.length; i++) {
+    if (array.indexOf(element) != -1) {
+      return true;
     }
-    return false;
+  }
+  return false;
 }
